@@ -1,0 +1,495 @@
+[
+    {
+        "id": "0cfe1d268f17c111",
+        "type": "tab",
+        "label": "firstflow",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "51ae1d46c4b31c81",
+        "type": "tab",
+        "label": "secondflow",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "61e2fec43c77f60a",
+        "type": "comment",
+        "z": "0cfe1d268f17c111",
+        "name": "NODE RED PRACTICE",
+        "info": "",
+        "x": 180,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "228a080b35a87406",
+        "type": "debug",
+        "z": "0cfe1d268f17c111",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 600,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "49a93c374d556661",
+        "type": "function",
+        "z": "0cfe1d268f17c111",
+        "name": "기능FUN",
+        "func": "var msg1 = {payload : \"Example 1\"}\nvar msg2 = {payload : \"Example 2\"}\nvar msg3 = {payload : \"Example 3\"}\nreturn msg1, msg2, msg3, msg4;",
+        "outputs": 3,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 200,
+        "wires": [
+            [
+                "228a080b35a87406"
+            ],
+            [
+                "b81b887a4bb24515"
+            ],
+            [
+                "037116ee434c83cf"
+            ]
+        ]
+    },
+    {
+        "id": "8fddcf49c729d735",
+        "type": "inject",
+        "z": "0cfe1d268f17c111",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            },
+            {
+                "p": "PLC",
+                "v": "13",
+                "vt": "str"
+            }
+        ],
+        "repeat": "2",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "반갑슈다",
+        "payload": "",
+        "payloadType": "date",
+        "x": 200,
+        "y": 200,
+        "wires": [
+            [
+                "49a93c374d556661"
+            ]
+        ]
+    },
+    {
+        "id": "d597eff408ef85ed",
+        "type": "catch",
+        "z": "0cfe1d268f17c111",
+        "name": "Error catch",
+        "scope": null,
+        "uncaught": false,
+        "x": 140,
+        "y": 280,
+        "wires": [
+            [
+                "56141bacf7eeeb0e"
+            ]
+        ]
+    },
+    {
+        "id": "b81b887a4bb24515",
+        "type": "debug",
+        "z": "0cfe1d268f17c111",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 600,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "037116ee434c83cf",
+        "type": "debug",
+        "z": "0cfe1d268f17c111",
+        "name": "debug 4",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 600,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "56141bacf7eeeb0e",
+        "type": "debug",
+        "z": "0cfe1d268f17c111",
+        "name": "debug 5",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 420,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "0eb35695e3054954",
+        "type": "status",
+        "z": "0cfe1d268f17c111",
+        "name": "",
+        "scope": [
+            "2ca3b8539bac2cd0"
+        ],
+        "x": 140,
+        "y": 340,
+        "wires": [
+            [
+                "2ca3b8539bac2cd0"
+            ]
+        ]
+    },
+    {
+        "id": "2ca3b8539bac2cd0",
+        "type": "debug",
+        "z": "0cfe1d268f17c111",
+        "name": "debug 6",
+        "active": true,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 430,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "78bf7d831481ba7e",
+        "type": "comment",
+        "z": "0cfe1d268f17c111",
+        "name": "상태체크 구간입니다.",
+        "info": "",
+        "x": 180,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "ba2a392a9b577096",
+        "type": "comment",
+        "z": "51ae1d46c4b31c81",
+        "name": "메인 플로우 구간",
+        "info": "",
+        "x": 200,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "c9744389d18148a9",
+        "type": "inject",
+        "z": "51ae1d46c4b31c81",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "3",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 210,
+        "y": 180,
+        "wires": [
+            [
+                "dcc919b61eacd012"
+            ]
+        ]
+    },
+    {
+        "id": "dcc919b61eacd012",
+        "type": "function",
+        "z": "51ae1d46c4b31c81",
+        "name": "function 1",
+        "func": "var msg1 = { payload: Math.random() * 10 };\nvar msg2 = { payload: Math.random() * 10 };\nvar msg3 = { payload: Math.random() * 10 };\n\nif(msg.payload > 1 && msg2.payload > 1 && msg3.payload > 1){\n    return [msg1, msg2, msg3];\n}else {\n    return [msg1, msg2, msg4];\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 180,
+        "wires": [
+            [
+                "d6fcc35861e8d5ab",
+                "a0efc33c60c47efe",
+                "e8fa240a630dd645"
+            ]
+        ]
+    },
+    {
+        "id": "d6fcc35861e8d5ab",
+        "type": "debug",
+        "z": "51ae1d46c4b31c81",
+        "name": "debug 7",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 520,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "e8fa240a630dd645",
+        "type": "debug",
+        "z": "51ae1d46c4b31c81",
+        "name": "debug 8",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 520,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "a0efc33c60c47efe",
+        "type": "debug",
+        "z": "51ae1d46c4b31c81",
+        "name": "debug 9",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 520,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "085b15b3d57f5a0a",
+        "type": "comment",
+        "z": "51ae1d46c4b31c81",
+        "name": "에러 체크 구간",
+        "info": "",
+        "x": 200,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "277419b49a105567",
+        "type": "catch",
+        "z": "51ae1d46c4b31c81",
+        "name": "",
+        "scope": [
+            "dcc919b61eacd012"
+        ],
+        "uncaught": false,
+        "x": 170,
+        "y": 380,
+        "wires": [
+            [
+                "56a02e1c54625130"
+            ]
+        ]
+    },
+    {
+        "id": "56a02e1c54625130",
+        "type": "function",
+        "z": "51ae1d46c4b31c81",
+        "name": "function 2",
+        "func": "msg.payload = \"function 노드에서 에러 발생\";\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 340,
+        "y": 380,
+        "wires": [
+            [
+                "b6f5f97ac333cc22"
+            ]
+        ]
+    },
+    {
+        "id": "b6f5f97ac333cc22",
+        "type": "debug",
+        "z": "51ae1d46c4b31c81",
+        "name": "debug 10",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 500,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "91acd45fe46dc0e0",
+        "type": "comment",
+        "z": "51ae1d46c4b31c81",
+        "name": "노드 감시 구간",
+        "info": "",
+        "x": 200,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "f6dcf5e7e5da15b7",
+        "type": "complete",
+        "z": "51ae1d46c4b31c81",
+        "name": "",
+        "scope": [
+            "56a02e1c54625130"
+        ],
+        "uncaught": false,
+        "x": 190,
+        "y": 700,
+        "wires": [
+            [
+                "140bce67c9cc6397"
+            ]
+        ]
+    },
+    {
+        "id": "140bce67c9cc6397",
+        "type": "function",
+        "z": "51ae1d46c4b31c81",
+        "name": "function 3",
+        "func": "msg.payload = \"catch 노드가 에러를 캐치한것을 감지함\"\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 700,
+        "wires": [
+            [
+                "856c489b241cd029"
+            ]
+        ]
+    },
+    {
+        "id": "856c489b241cd029",
+        "type": "debug",
+        "z": "51ae1d46c4b31c81",
+        "name": "debug 11",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 520,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "5c839d278f8446ea",
+        "type": "comment",
+        "z": "51ae1d46c4b31c81",
+        "name": "상테 체크 구간",
+        "info": "",
+        "x": 200,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "926f6b1777c56f84",
+        "type": "status",
+        "z": "51ae1d46c4b31c81",
+        "name": "",
+        "scope": [
+            "d6fcc35861e8d5ab"
+        ],
+        "x": 180,
+        "y": 540,
+        "wires": [
+            [
+                "46438a65e4d37510"
+            ]
+        ]
+    },
+    {
+        "id": "46438a65e4d37510",
+        "type": "debug",
+        "z": "51ae1d46c4b31c81",
+        "name": "debug 12",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 520,
+        "y": 540,
+        "wires": []
+    }
+]
